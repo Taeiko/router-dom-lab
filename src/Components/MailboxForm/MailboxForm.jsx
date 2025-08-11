@@ -8,3 +8,14 @@ const MailboxForm = ({addMailbox}) =>{
     boxOwner: 'Alex',
     })
 }
+
+const navigate = useNavigate()
+
+const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value })
+        
+        console.log(formData)
+}
+
+
+export default MailboxForm
