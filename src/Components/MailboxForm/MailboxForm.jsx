@@ -19,11 +19,7 @@ const handleChange = (event) => {
 
 const handleSubmit = (event)=>{
 event.preventDefault()
-addMailbox(formData)
-setFormData({
-    boxOwner: '',
-    boxSize: ''
-})
+addMailbox()
 }
 return(
     <>
