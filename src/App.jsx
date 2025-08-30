@@ -3,16 +3,17 @@ import { useState } from "react"
 import NavBar from "./Components/Navbar/NavBar"
 import MailboxList from "./Components/MailboxList/MailboxList"
 import MailboxForm from "./Components/MailboxForm/MailboxForm"
+
 const App = () => {
-  const addMailbox = (FormData) => {
-    const [mailboxes, setMailboxes] = useState([{}, {}])
-    const [newMailbox, setNewMailbox] = useState({
-      boxSize: '',
-      boxOwner: ''
-    })
-    setMailboxes({...mailboxes, newMailbox})
+  const [mailboxes, setMailboxes] = useState([])
+
+  const addMailbox = (formData) => {
+    const newBox = {
+      _id: mailboxes.length + 1,
+      ...formData
+    }
+    setMailboxes([...mailboxes, newBox])
   }
-  
   
   return (
     <Router>
